@@ -22,4 +22,5 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 
 ## source
 [vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
-[vhost解读注释]()
+
+[vhost解读注释](https://github.com/fengluluf/vhost-analysis/blob/master/vhost-analysis.js)
