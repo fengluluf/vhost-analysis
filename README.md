@@ -19,3 +19,7 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 ## 访问指定的vhost
 - 配置hosts：因为Vhost实际上就是DNS解析，所以可以配置客户端的hosts，将域名（Vhost）解析到指定的服务器，就可以访问这台服务器上的指定的vhost。
 - 使用app的参数：需要服务器支持。在app后面带参数指定要访问的Vhost。SRS支持?vhost=VHOST和...vhost...VHOST这两种方式，后面的方式是避免一些播放器不识别？和=等特殊字符。
+
+## source
+[vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
+[vhost解读注释]()
