@@ -72,34 +72,6 @@ function vhost (hostname, handle) {
     handle(req, res, next)
   }
 }
-
-/**
- * Get hostname of request.获取主机名请求
- *
- * @param (object} req
- * @return {string}
- * @private
- */
-//若服务器的域名中有:则截取:前的部分
-function hostnameof(req) {
-//host为服务器的域名
-  var host = req.headers.host
-//host为空时执行此函数
-  if (!host) {
-    return
-  }
-//若host的第一个字符为'['则返回']'的下标+1，否则返回0
-  var offset = host[0] === '['
-    ? host.indexOf(']') + 1
-    : 0
-//从offset开始检索，返回':'的下标
-  var index = host.indexOf(':', offset)
-//若服务器的域名中有:则截取:前的部分
-  return index !== -1
-    ? host.substring(0, index)
-    : host
-}
-
 /**
  * Determine if object is RegExp.确定对象是正则表达式
  *
@@ -118,7 +90,7 @@ function isregexp (val) {
  * @param (string|RegExp} val
  * @private
  */
-
+//将给定的主机名的值生成正则表达式
 function hostregexp(val) {
     //若val是正则表达式则返回val.source
   var source = !isregexp(val)
@@ -147,11 +119,11 @@ function hostregexp(val) {
  * @return {object}
  * @private
  */
-
+//返回符合由给定域名生成的正则表达式的对象
 function vhostof(req, regexp) {
   //请求头的host用来指定服务器的域名
   var host = req.headers.host
-  //hostnameof(req)获取主机名请求
+    //hostnameof(req)获取请求的主机名
   var hostname = hostnameof(req)
 //若hostname为空则执行此函数
   if (!hostname) {
@@ -176,3 +148,35 @@ function vhostof(req, regexp) {
 
   return obj
 }
+/**
+ * Get hostname of request.获取请求的主机名
+ *
+ * @param (object} req
+ * @return {string}
+ * @private
+ */
+//若服务器的域名中有:则截取:前的部分
+function hostnameof(req) {
+    //host为服务器的域名
+    var host = req.headers.host
+    //host为空时执行此函数
+    if (!host) {
+        return
+    }
+    //若host的第一个字符为'['则返回']'的下标+1，否则返回0
+    var offset = host[0] === '['
+      ? host.indexOf(']') + 1
+      : 0
+    //从offset开始检索，返回':'的下标
+    var index = host.indexOf(':', offset)
+    //若服务器的域名中有:则截取:前的部分
+    return index !== -1
+      ? host.substring(0, index)
+      : host
+}
+// for match of "foo.bar.example.com:8080" against "*.*.example.com": 
+//req.vhost.host === 'foo.bar.example.com:8080'
+//req.vhost.hostname === 'foo.bar.example.com'
+//req.vhost.length === 2
+//req.vhost[0] === 'foo'
+//req.vhost[1] === 'bar'
