@@ -4,6 +4,11 @@ Virtual Host 即 Vhost ，是linux中的虚拟主机系统。
 
 虚拟主机 (Virtual Host) 是在同一台机器搭建属于不同域名或者基于不同 IP 的多个网站服务的技术. 可以为运行在同一物理机器上的各个网站指配不同的 IP 和端口, 也可让多个网站拥有不同的域名
 
+## source
+[vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
+
+[vhost解读注释](https://github.com/fengluluf/vhost-analysis/blob/master/vhost-analysis.js)
+
 ## vhost(hostName,handle)
 创建一个新的中间件功能，以便在请求handle的传入主机匹配时切换请求hostname。这个函数被称为 handle(req, res, next)像标准中间件一样。
 
@@ -20,7 +25,13 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 - 配置hosts：因为Vhost实际上就是DNS解析，所以可以配置客户端的hosts，将域名（Vhost）解析到指定的服务器，就可以访问这台服务器上的指定的vhost。
 - 使用app的参数：需要服务器支持。在app后面带参数指定要访问的Vhost。SRS支持?vhost=VHOST和...vhost...VHOST这两种方式，后面的方式是避免一些播放器不识别？和=等特殊字符。
 
-## source
-[vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
+## 仓库根目录下的文件及作用
+- package.json：展示项目所依赖的npm包、允许你指定一个包的版本[范围]。通过npm init安装
+- LICENSE：项目许可证
+- HISTORY.md：历史版本
+- .travis.yml：持续集成工具travis的配置文件，来告诉Travis一些项目信息
+- .gitignore：git 的忽略文件
+- .eslintrc：环境定义了预定义的全局变量。
+- test：测试脚本
 
-[vhost解读注释](https://github.com/fengluluf/vhost-analysis/blob/master/vhost-analysis.js)
+
