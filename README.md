@@ -10,7 +10,7 @@ Virtual Host 即 Vhost ，是linux中的虚拟主机系统。
 [vhost解读注释](https://github.com/fengluluf/vhost-analysis/blob/master/vhost-analysis.js)
 
 ## vhost(hostName,handle)
-创建一个新的中间件功能，以便在请求handle的传入主机匹配时切换请求hostname。这个函数被称为 handle(req, res, next)像标准中间件一样。
+创建一个新的中间件(通常，在生成HTTP响应之前，会向Connect服务器发送一个请求，并通过许多函数。这些功能在连接条款中通常被称为“中间件”)功能，以便在请求handle的传入主机匹配时切换请求hostname。这个函数被称为 handle(req, res, next)像标准中间件一样。
 
 hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以匹配主机名的该部分中的一个或多个字符。当hostname是RegExp时，它将被强制为不区分大小写（因为主机名是），并且将被迫基于主机名的开始和结束进行匹配。
 
