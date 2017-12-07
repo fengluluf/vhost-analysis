@@ -1,15 +1,25 @@
 # vhost-analysis
 
+# 1.vhost是什么？
 Virtual Host 即 Vhost ，是linux中的虚拟主机系统。
 
 虚拟主机 (Virtual Host) 是在同一台机器搭建属于不同域名或者基于不同 IP 的多个网站服务的技术. 可以为运行在同一物理机器上的各个网站指配不同的 IP 和端口, 也可让多个网站拥有不同的域名
 
-## source
+## 2.source
 [vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
 
 [vhost解读注释](https://github.com/fengluluf/vhost-analysis/blob/master/vhost-analysis.js)
 
-## vhost(hostName,handle)
+## 3.仓库根目录下的文件及作用
+- package.json：展示项目所依赖的npm包、允许你指定一个包的版本[范围]。通过npm init安装
+- LICENSE：项目许可证
+- HISTORY.md：历史版本
+- .travis.yml：持续集成工具travis的配置文件，来告诉Travis一些项目信息
+- .gitignore：git 的忽略文件
+- .eslintrc：环境定义了预定义的全局变量。
+- test：测试脚本
+
+## 4.vhost(hostName,handle)
 创建一个新的中间件(通常，在生成HTTP响应之前，会向Connect服务器发送一个请求，并通过许多函数。这些功能在连接条款中通常被称为“中间件”)功能，以便在请求handle的传入主机匹配时切换请求hostname。这个函数被称为 handle(req, res, next)像标准中间件一样。
 
 hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以匹配主机名的该部分中的一个或多个字符。当hostname是RegExp时，它将被强制为不区分大小写（因为主机名是），并且将被迫基于主机名的开始和结束进行匹配。
@@ -25,13 +35,6 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 - 配置hosts：因为Vhost实际上就是DNS解析，所以可以配置客户端的hosts，将域名（Vhost）解析到指定的服务器，就可以访问这台服务器上的指定的vhost。
 - 使用app的参数：需要服务器支持。在app后面带参数指定要访问的Vhost。SRS支持?vhost=VHOST和...vhost...VHOST这两种方式，后面的方式是避免一些播放器不识别？和=等特殊字符。
 
-## 仓库根目录下的文件及作用
-- package.json：展示项目所依赖的npm包、允许你指定一个包的版本[范围]。通过npm init安装
-- LICENSE：项目许可证
-- HISTORY.md：历史版本
-- .travis.yml：持续集成工具travis的配置文件，来告诉Travis一些项目信息
-- .gitignore：git 的忽略文件
-- .eslintrc：环境定义了预定义的全局变量。
-- test：测试脚本
+
 
 
