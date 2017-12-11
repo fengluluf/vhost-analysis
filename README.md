@@ -32,7 +32,11 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 当主机匹配，请求被发送到虚拟主机处理程序，该req.vhost 属性将填充一个对象。该对象将具有与每个通配符（或者如果RegExp对象提供的捕获组）相对应的数字属性并且 hostname匹配。
 
 ## 6.index.js的解读
-index.js主要由vhost(hostname,handle)、isregexp (val)、hostregexp(val)、vhostof(req, regexp)和hostnameof(req)5个函数组成，结构比较清晰，且每个函数前都有此函数功能的说明以及参数和参数类型，可读性较高。
+- index.js主要由vhost(hostname,handle)、isregexp (val)、hostregexp(val)、vhostof(req, regexp)和hostnameof(req)5个函数组成，结构比较清晰，且每个函数前都有此函数功能的说明以及参数和参数类型，可读性较高。
+
+- index.js脚本的测试结果
+
+- 使用vhost的程序运行
 
 
 
