@@ -36,9 +36,8 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 
 - index.js脚本的测试结果
 ![image](https://github.com/fengluluf/vhost-analysis/blob/master/imgs/%E6%B5%8B%E8%AF%95.png)
-https://github.com/fengluluf/vhost-analysis/blob/master/imgs/%E6%B5%8B%E8%AF%95.png
 - 使用vhost的程序运行
-
+![image](https://github.com/fengluluf/vhost-analysis/blob/master/imgs/%E8%BF%90%E8%A1%8C.png)
 
 
 
