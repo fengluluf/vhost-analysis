@@ -34,6 +34,16 @@ hostname可以是一个字符串或RegExp对象。hostname是字符串时，*以
 ## 6.index.js的解读
 - index.js主要由vhost(hostname,handle)、isregexp (val)、hostregexp(val)、vhostof(req, regexp)和hostnameof(req)5个函数组成，结构比较清晰，且每个函数前都有此函数功能的说明以及参数和参数类型，可读性较高。
 
+vhost(hostname,handle):创建一个虚拟主机中间件
+
+isregexp (val)：判断传入的对象是否是正则表达式
+
+hostregexp(val)：将给定的主机名的值生成正则表达式
+
+vhostof(req, regexp)：返回符合由给定域名生成的正则表达式的对象
+
+hostnameof(req)：若服务器的域名中有:则截取:前的部分
+
 - index.js脚本的测试结果
 ![image](https://github.com/fengluluf/vhost-analysis/blob/master/imgs/%E6%B5%8B%E8%AF%95.png)
 - 使用vhost的程序运行
