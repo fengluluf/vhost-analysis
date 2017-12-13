@@ -3,9 +3,9 @@
 # 1.vhost是什么？
 Virtual Host 即 Vhost ，是linux中的虚拟主机系统。
 
- Express是一个基于Node.js平台的web应用开发框架,vhost则是属于express的中间件.
+ Express是一个基于Node.js平台的web应用开发框架,vhost则是属于express的中间件。
  
-虚拟主机 (Virtual Host) 是在同一台机器搭建属于不同域名或者基于不同 IP 的多个网站服务的技术. 可以为运行在同一物理机器上的各个网站指配不同的 IP 和端口, 也可让多个网站拥有不同的域名
+虚拟主机 (Virtual Host) 是在同一台机器搭建属于不同域名或者基于不同 IP 的多个网站服务的技术. 可以为运行在同一物理机器上的各个网站指配不同的 IP 和端口, 也可让多个网站拥有不同的域名。
 
 ## 2.source
 [vhost源码](https://github.com/fengluluf/vhost-analysis/blob/master/scorce%20code/index.js)
